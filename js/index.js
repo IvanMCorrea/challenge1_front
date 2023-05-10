@@ -1,20 +1,4 @@
-const handleLoadTable = document.querySelector("#handleLoadTable");
 const bodyTable = document.getElementById("body-tabla-posiciones");
-
-handleLoadTable.addEventListener("click", async (e) => {
-  e.preventDefault();
-  let fetchData = await fetch(
-    `http://challenge1back-production.up.railway.app/api/leaderboard/scrapper`,
-    {
-      method: "get",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    }
-  );
-  await fetchData.json();
-});
 
 function checkHeaderTitles() {
   const thPosicion = document.querySelector(
