@@ -74,7 +74,7 @@ async function getTableData() {
       console.log(row);
       fila.innerHTML = `
             <td class="center">${row.posicion}</td>
-            <td class="full-width">${row.equipo}</td>
+            <td class="full-width"><img src="${row.logo}" alt="escudo ${row.equipo}"${row.equipo} class="logo"</td>
             <td class="center">${row.partidos_jugados}</td>
             <td class="center">${row.partidos_ganados}</td>
             <td class="center">${row.partidos_perdidos}</td>

@@ -202,3 +202,8 @@ a {
     max-width: 600px;
   }
 }
+
+.logo {
+  width: 24px;
+  height: 24px;
+}
