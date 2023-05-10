@@ -1,0 +1,204 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+div {
+  box-sizing: border-box !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.resaltar-verde {
+  background-color: rgb(0, 180, 0);
+  color: white;
+}
+
+.resaltar-rojo {
+  background-color: rgb(190, 0, 0);
+  color: white;
+}
+
+.nav {
+  background-color: rgb(0, 0, 82);
+  color: white;
+  text-align: center;
+  padding: 30px, 30px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18;
+  padding: 25px;
+}
+
+#tabla-posiciones {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  max-width: 1000px;
+}
+
+#tabla-posiciones thead th {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  vertical-align: middle;
+  background-color: rgb(0, 0, 82);
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+#tabla-posiciones td {
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+#body-tabla-posiciones tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 1200px) {
+  #tabla-posiciones {
+    max-width: 600px;
+  }
+}

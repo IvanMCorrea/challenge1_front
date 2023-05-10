@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Tabla de posiciones</title>
-</head>
-<body>
-    <button id="handleLoadTable">Cargar datos</button>
+  </head>
+  <body>
+    <header class="nav">
+      <h1 class="title">Tabla de posiciones</h1>
+    </header>
+    <table id="tabla-posiciones">
+      <thead>
+        <tr>
+          <th data-shorten="POS">Posición</th>
+          <th>Equipo</th>
+          <th data-shorten="PJ">Partidos Jugados</th>
+          <th data-shorten="PG">Partidos Ganados</th>
+          <th data-shorten="PP">Partidos Perdidos</th>
+          <th data-shorten="PE">Partidos Empatados</th>
+          <th data-shorten="GF">Goles a Favor</th>
+          <th data-shorten="GC">Goles en Contra</th>
+          <th data-shorten="DG">Diferencia de Goles</th>
+          <th data-shorten="PTS">Puntos</th>
+        </tr>
+      </thead>
+      <tbody id="body-tabla-posiciones"></tbody>
+    </table>
     <script src="js/index.js"></script>
-</body>
+  </body>
 </html>

@@ -1,13 +1,113 @@
-let handleLoadTable = document.querySelector("#handleLoadTable");
-handleLoadTable.addEventListener("click", async (e)=>{
-    e.preventDefault();
-    let fetchData = await fetch(`http://localhost:3001/api/leaderboard/scrapper`, {
+const handleLoadTable = document.querySelector("#handleLoadTable");
+const bodyTable = document.getElementById("body-tabla-posiciones");
+
+handleLoadTable.addEventListener("click", async (e) => {
+  e.preventDefault();
+  let fetchData = await fetch(
+    `http://localhost:3001/api/leaderboard/scrapper`,
+    {
+      method: "get",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  await fetchData.json();
+});
+
+function checkHeaderTitles() {
+  const thPosicion = document.querySelector(
+    '#tabla-posiciones th[data-shorten="POS"]'
+  );
+  const thPartidosJugados = document.querySelector(
+    '#tabla-posiciones th[data-shorten="PJ"]'
+  );
+  const thPartidosGanados = document.querySelector(
+    '#tabla-posiciones th[data-shorten="PG"]'
+  );
+  const thPartidosPerdidos = document.querySelector(
+    '#tabla-posiciones th[data-shorten="PP"]'
+  );
+  const thPartidosEmpatados = document.querySelector(
+    '#tabla-posiciones th[data-shorten="PE"]'
+  );
+  const thGolesFavor = document.querySelector(
+    '#tabla-posiciones th[data-shorten="GF"]'
+  );
+  const thGolesContra = document.querySelector(
+    '#tabla-posiciones th[data-shorten="GC"]'
+  );
+  const thDiferenciaGoles = document.querySelector(
+    '#tabla-posiciones th[data-shorten="DG"]'
+  );
+  const thPuntos = document.querySelector(
+    '#tabla-posiciones th[data-shorten="PTS"]'
+  );
+
+  if (window.innerWidth <= 1200) {
+    thPosicion.textContent = "POS";
+    thPartidosJugados.textContent = "PJ";
+    thPartidosGanados.textContent = "PG";
+    thPartidosPerdidos.textContent = "PP";
+    thPartidosEmpatados.textContent = "PE";
+    thGolesFavor.textContent = "GF";
+    thGolesContra.textContent = "GC";
+    thDiferenciaGoles.textContent = "DG";
+    thPuntos.textContent = "PTS";
+  } else {
+    thPartidosJugados.textContent = "Partidos Jugados";
+    thPartidosGanados.textContent = "Partidos Ganados";
+    thPartidosPerdidos.textContent = "Partidos Perdidos";
+    thPartidosEmpatados.textContent = "Partidos Empatados";
+    thGolesFavor.textContent = "Goles a Favor";
+    thGolesContra.textContent = "Goles en Contra";
+    thDiferenciaGoles.textContent = "Diferencia de Goles";
+    thPuntos.textContent = "Puntos";
+  }
+}
+
+async function getTableData() {
+  try {
+    const response = await fetch(
+      `http://localhost:3001/api/leaderboard/getLeaderboard`,
+      {
         method: "get",
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-      });
-      let data = await fetchData.json();
-      console.log(data)
-})
+      }
+    );
+    const res = await response.json();
+    res.data.forEach((row, index) => {
+      const fila = document.createElement("tr");
+      if (index < 4) {
+        fila.classList.add("resaltar-verde");
+      } else if (index >= res.data.length - 4) {
+        fila.classList.add("resaltar-rojo");
+      }
+      console.log(row);
+      fila.innerHTML = `
+            <td class="center">${row.posicion}</td>
+            <td class="full-width">${row.equipo}</td>
+            <td class="center">${row.partidos_jugados}</td>
+            <td class="center">${row.partidos_ganados}</td>
+            <td class="center">${row.partidos_perdidos}</td>
+            <td class="center">${row.partidos_empatados}</td>
+            <td class="center">${row.goles_favor}</td>
+            <td class="center">${row.goles_contra}</td>
+            <td class="center">${row.diferencia_goles}</td>
+            <td class="center">${row.puntos}</td>
+          `;
+
+      bodyTable.appendChild(fila);
+    });
+    checkHeaderTitles();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getTableData();
+window.addEventListener("resize", checkHeaderTitles);
