@@ -54,7 +54,7 @@ function checkHeaderTitles() {
 async function getTableData() {
   try {
     const response = await fetch(
-      `http://challenge1back-production.up.railway.app/api/leaderboard/getLeaderboard`,
+      `https://challenge1back-production.up.railway.app/api/leaderboard/getLeaderboard`,
       {
         method: "get",
         headers: {
