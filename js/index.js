@@ -73,7 +73,7 @@ async function getTableData() {
       }
       fila.innerHTML = `
             <td class="center">${row.posicion}</td>
-            <td class="full-width"><div class="align-center"><img src="${row.logo}" alt="escudo ${row.equipo}" class="logo"/><span>${row.equipo}</span></div></td>
+            <td class="full-width"><div class="align-center"><img src="${row.logo}" title="${row.equipo}" alt="escudo ${row.equipo}  class="logo"/><span>${row.equipo}</span></div></td>
             <td class="center">${row.partidos_jugados}</td>
             <td class="center">${row.partidos_ganados}</td>
             <td class="center">${row.partidos_perdidos}</td>
