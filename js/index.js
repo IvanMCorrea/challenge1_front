@@ -4,7 +4,7 @@ const bodyTable = document.getElementById("body-tabla-posiciones");
 handleLoadTable.addEventListener("click", async (e) => {
   e.preventDefault();
   let fetchData = await fetch(
-    `http://localhost:3001/api/leaderboard/scrapper`,
+    `http://challenge1back-production.up.railway.app/api/leaderboard/scrapper`,
     {
       method: "get",
       headers: {
@@ -70,7 +70,7 @@ function checkHeaderTitles() {
 async function getTableData() {
   try {
     const response = await fetch(
-      `http://localhost:3001/api/leaderboard/getLeaderboard`,
+      `http://challenge1back-production.up.railway.app/api/leaderboard/getLeaderboard`,
       {
         method: "get",
         headers: {
