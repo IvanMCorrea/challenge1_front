@@ -71,7 +71,6 @@ async function getTableData() {
       } else if (index >= res.data.length - 4) {
         fila.classList.add("resaltar-rojo");
       }
-      console.log(row);
       fila.innerHTML = `
             <td class="center">${row.posicion}</td>
             <td class="full-width"><img src="${row.logo}" alt="escudo ${row.equipo}" class="logo"/> ${row.equipo}</td>
