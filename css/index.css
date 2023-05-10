@@ -137,6 +137,14 @@ a {
   color: inherit;
 }
 
+:root {
+  --shadow-color: 0deg 0% 63%;
+  --shadow-elevation-medium: 0.1px 0.3px 0.4px hsl(var(--shadow-color) / 0.36),
+    0.3px 1.1px 1.3px -0.8px hsl(var(--shadow-color) / 0.36),
+    0.7px 2.7px 3.1px -1.7px hsl(var(--shadow-color) / 0.36),
+    1.6px 6.7px 7.7px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
 .resaltar-verde {
   background-color: rgb(0, 180, 0);
   color: white;
@@ -161,19 +169,25 @@ a {
 }
 
 #tabla-posiciones {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
   margin-top: 50px;
   margin-bottom: 30px;
   margin-left: 30px;
-  max-width: 1000px;
+  max-width: 1200px;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+#tabla-posiciones thead {
+  background-color: rgb(0, 0, 82);
 }
 
 #tabla-posiciones thead th {
   padding-top: 15px;
   padding-bottom: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   vertical-align: middle;
-  background-color: rgb(0, 0, 82);
   color: whitesmoke;
   font-weight: 500;
 }
@@ -198,7 +212,7 @@ a {
   border-bottom: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   #tabla-posiciones {
     max-width: 600px;
   }
