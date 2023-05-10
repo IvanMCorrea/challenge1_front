@@ -221,10 +221,10 @@ a {
 .logo {
   width: 24px;
   height: 24px;
-  margin-right: 5px;
 }
 
 .align-center {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
